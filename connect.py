@@ -44,6 +44,13 @@ def main(server=SERVER):
             led_toggle()
             sleep(0.5)
         pass
+        if button.vlaue(1):
+            servo.duty(35)
+        else:
+            button.value(0)
+            servo.duty(122)
+
+        pass
     c = MQTTClient(C_ID, server)
     c.set_callback(sub)
     c.connect()
